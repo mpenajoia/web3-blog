@@ -27,7 +27,7 @@ contract Blog {
     mapping(string => Post) private hashToPost;
 
     // events, listeners for updats on graphql
-    event PostCreated(uint id, string title, sting hash);
+    event PostCreated(uint id, string title, string hash);
     event PostUpdated(uint id, string title, string hash, bool published);
 
     constructor(string memory _name){
@@ -47,7 +47,7 @@ contract Blog {
     }
     // fetch single post by hash
     function fetchPost(string memory hash) public view returns(Post memory) {
-        return hashToPost(hash);
+        return hashToPost[hash];
     }
     // creating a post
     function createPost(string memory title, string memory hash) public onlyOwner {
