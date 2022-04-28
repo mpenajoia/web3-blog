@@ -37,6 +37,8 @@ export default function Home(props) {
                       src='/right-arrow.svg'
                       alt='Right arrow'
                       className={smallArrow}
+                      width={25}
+                      height={25}
                     />
                   </div>
                 </div>
@@ -54,8 +56,7 @@ export default function Home(props) {
                 src='/right-arrow.svg'
                 alt='Right arrow'
                 className={arrow}
-                width="50px"
-                height="50px"
+                layout='fill'
               />
             </button>
           )
