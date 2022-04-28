@@ -20,7 +20,7 @@ function App({ Component, pageProps }) {
         walletconnect: {
           package: WalletConnectProvider,
           options: {
-            infuraId: process.env.REACT_APP_INFURA_ID
+            infuraId: process.env.INFURA_ID
           },
         },
       },
@@ -34,12 +34,11 @@ function App({ Component, pageProps }) {
       const connection = await web3Modal.connect()
       const provider = new ethers.providers.Web3Provider(connection)
       const accounts = await provider.listAccounts()
-      setAccount(account[0])
+      setAccount(accounts[0])
     } catch (err) {
       console.log('error: ', err)
     }
   }
-
   return (
     <div>
       <nav className={nav}>
@@ -49,7 +48,8 @@ function App({ Component, pageProps }) {
               <Image
                 src='/logo.svg'
                 alt="React Logo"
-                style={{ width: '50px' }} 
+                width="50px"
+                height="50px"
               />
             </a>
           </Link>
