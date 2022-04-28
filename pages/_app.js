@@ -20,7 +20,7 @@ function App({ Component, pageProps }) {
         walletconnect: {
           package: WalletConnectProvider,
           options: {
-            infuraId: INFURA_ID
+            infuraId: process.env.REACT_APP_INFURA_ID
           },
         },
       },
